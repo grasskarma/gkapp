@@ -1,6 +1,4 @@
-# screensite
-
-Grass Karma App
+# Grass Karma App
 
 Purpose:
 - Allow anyone to mow a nature strip to anyone (Uber model for mowers, like drivers)
