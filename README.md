@@ -1,15 +1,11 @@
 # screensite
 
-Sanctions Screening App
+Grass Karma App
 
 Purpose:
-- Provide sanctions screening via UI: results ranked by match score (0.95-100%)
+- Allow anyone to mow a nature strip to anyone (Uber model for mowers, like drivers)
 
-Intended features:
-- Screen an entity (person/item or organisation) against all open sanctions lists.
-- Look at up-to-date sanctions lists in one location.
-
-This repo is only the front-end of the app and it is built with Flutter backed by Firebase Firestore. (Another repository will be created to define server functions, which will serve as a back-end of the application).
+This repo is only the front-end of the app and it is built with Flutter backed by Firebase Firestore.
 
 ## Flutter
 
@@ -22,7 +18,6 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-Remember, in the context of this project we are using Flutter for Web only!
 
 ## Riverpod
 
