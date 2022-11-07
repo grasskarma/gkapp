@@ -2,14 +2,17 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:screensite/app_bar.dart';
 import 'package:screensite/lists/lists_page.dart';
 import 'package:screensite/login_page.dart';
+import 'package:screensite/request_service/request_service_page.dart';
 import 'package:screensite/search/search_page.dart';
 import 'package:screensite/pep/pep_admin.dart';
 import 'package:screensite/pep/pep_library.dart';
 import 'package:screensite/adversemedia/adversemedia_page.dart';
 import 'package:screensite/state/generic_state_notifier.dart';
 import 'package:screensite/state/theme_state_notifier.dart';
+import 'package:screensite/status/checking_area_page.dart';
 import 'package:screensite/theme.dart';
 import 'firebase_options.dart';
 
@@ -85,16 +88,19 @@ class TheAppState extends ConsumerState<TheApp> {
               ? LoginPage()
               : DefaultTabController(
                   initialIndex: 0,
-                  length: 5,
+                  length: MyAppBar.tabs.length,
                   child: Navigator(
                     onGenerateRoute: (RouteSettings settings) {
                       // print('onGenerateRoute: ${settings}');
-                      if (settings.name == '/' || settings.name == 'search') {
+                      if (settings.name == '/' || settings.name == 'register') {
                         return PageRouteBuilder(
-                            pageBuilder: (_, __, ___) => SearchPage());
-                      } else if (settings.name == 'lists') {
+                            pageBuilder: (_, __, ___) => RegistrationPage());
+                      } else if (settings.name == 'checking area') {
                         return PageRouteBuilder(
-                            pageBuilder: (_, __, ___) => ListsPage());
+                            pageBuilder: (_, __, ___) => CheckingAreaPage());
+                      } else if (settings.name == 'request') {
+                        return PageRouteBuilder(
+                            pageBuilder: (_, __, ___) => RequestServicePage());
                       } else if (settings.name == 'pep admin') {
                         return PageRouteBuilder(
                             pageBuilder: (_, __, ___) => PepAdminPage());

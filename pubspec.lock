@@ -347,15 +347,6 @@ packages:
       url: "https://github.com/amlcloud/flutter-lib.git"
     source: git
     version: "0.0.1"
-  logo:
-    dependency: "direct main"
-    description:
-      path: logo
-      ref: HEAD
-      resolved-ref: "365e019975d87733bb4a465a5f8d6ee0e1935e72"
-      url: "https://github.com/amlcloud/flutter-lib.git"
-    source: git
-    version: "0.0.1"
   matcher:
     dependency: transitive
     description:

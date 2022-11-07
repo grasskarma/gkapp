@@ -13,7 +13,7 @@ final activeBatch =
     StateNotifierProvider<GenericStateNotifier<String?>, String?>(
         (ref) => GenericStateNotifier<String?>(null));
 
-class SearchPage extends ConsumerWidget {
+class RegistrationPage extends ConsumerWidget {
   final TextEditingController searchCtrl = TextEditingController();
 
   @override
@@ -40,53 +40,41 @@ class SearchPage extends ConsumerWidget {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Expanded( 
+                              Expanded(
                                   child: TextField(
+                                      decoration:
+                                          InputDecoration(hintText: 'phone...'),
                                       onChanged: (v) {},
                                       controller: searchCtrl)),
-                              ElevatedButton(
-                                  child: Text("Search"),
-                                  onPressed: () async {
-                                    if (searchCtrl.text.isEmpty) return;
-
-                                    // var url = Uri.parse(
-                                    //     'https://screen-od6zwjoy2a-an.a.run.app/?name=${searchCtrl.text.toLowerCase()}');
-                                    // var response = await http.post(url, body: {
-                                    //   // 'name': 'doodle',
-                                    //   // 'color': 'blue'
-                                    // });
-                                    // print(
-                                    //     'Response status: ${response.statusCode}');
-                                    // print('Response body: ${response.body}');
-
-                                    // FirebaseFirestore.instance
-                                    //     .collection('search')
-                                    //     .doc(searchCtrl.text)
-                                    //     .set({
-                                    //   'target': searchCtrl.text,
-                                    //   'timeCreated':
-                                    //       FieldValue.serverTimestamp(),
-                                    //   'author': FirebaseAuth
-                                    //       .instance.currentUser!.uid,
-                                    // });
-
-                                    FirebaseFirestore.instance
-                                        .collection('user')
-                                        .doc(FirebaseAuth
-                                            .instance.currentUser!.uid)
-                                        .collection('search')
-                                        .doc(searchCtrl.text)
-                                        .set({
-                                      'target': searchCtrl.text,
-                                      'timeCreated':
-                                          FieldValue.serverTimestamp(),
-                                      'author': FirebaseAuth
-                                          .instance.currentUser!.uid,
-                                    });
-                                  })
                             ],
                           ),
-                          Expanded(child: SearchHistory()),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                  child: TextField(
+                                      decoration: InputDecoration(
+                                          hintText: 'address...'),
+                                      onChanged: (v) {},
+                                      controller: searchCtrl)),
+                            ],
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Expanded(
+                                  child: TextField(
+                                      decoration:
+                                          InputDecoration(hintText: 'name...'),
+                                      onChanged: (v) {},
+                                      controller: searchCtrl)),
+                            ],
+                          ),
+                          ElevatedButton(onPressed: null, child: Text("Start"))
                         ],
                       )),
                   Expanded(

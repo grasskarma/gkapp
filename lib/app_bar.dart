@@ -7,12 +7,13 @@ import 'package:screensite/common.dart';
 import 'package:logo/logo.dart';
 
 class MyAppBar {
-  static final List<String> _tabs = [
-    'search',
-    'lists',
-    'pep admin',
-    'pep library',
-    'adverse media'
+  static final List<String> tabs = [
+    'register',
+    'checking area',
+    'request',
+    'subscribe',
+    'view schedule',
+    'cancel subscription'
   ];
 
   static PreferredSizeWidget getBar(BuildContext context, WidgetRef ref) {
@@ -27,7 +28,7 @@ class MyAppBar {
           ? null
           : Padding(
               padding: EdgeInsets.all(10),
-              child: Logo(),
+              child: Text('logo'),
             ),
       title: (MediaQuery.of(context).size.width < WIDE_SCREEN_WIDTH)
           ? null
@@ -35,7 +36,7 @@ class MyAppBar {
               child: SizedBox(
                   width: 800,
                   child: TabBar(
-                    tabs: _tabs
+                    tabs: tabs
                         .map((t) => Tab(
                             iconMargin: EdgeInsets.all(0),
                             child:
@@ -54,7 +55,7 @@ class MyAppBar {
                                             Colors.white))))
                         .toList(),
                     onTap: (index) {
-                      Navigator.of(context).pushNamed(_tabs[index]);
+                      Navigator.of(context).pushNamed(tabs[index]);
                     },
                   ))),
       actions: [

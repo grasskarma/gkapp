@@ -42,17 +42,12 @@ dependencies:
   jiffy: ^5.0.0
   rxdart: ^0.27.4
   http: ^0.13.4
-  flutter_google_places: ^0.3.0
+  # flutter_google_places: ^0.3.0
   login:
     git: 
       url: https://github.com/amlcloud/flutter-lib.git
       path: login
   country_picker: ^2.0.16
-  logo:
-    git:
-      url: https://github.com/amlcloud/flutter-lib.git
-      path: logo
-
 
 dev_dependencies:
   flutter_test:

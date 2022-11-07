@@ -11,7 +11,7 @@ class TheDrawer {
         children: <Widget>[
           DrawerHeader(
               child: Container(
-            child: Logo(),
+            child: Text('logo'),
             // Column(children: <Widget>[
             //   Material(
             //     child: Image.asset("amlcloud-lg.png", height: 50, width: 50),
@@ -28,7 +28,7 @@ class TheDrawer {
                 Navigator.of(context).pop();
                 Navigator.push(context, MaterialPageRoute(
                   builder: (context) {
-                    return SearchPage();
+                    return RegistrationPage();
                   },
                 ));
               }),

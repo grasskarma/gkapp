@@ -18,7 +18,7 @@ class LoginPage extends ConsumerWidget {
         "loginAnonymous": true,
         "signupOption": true,
       },
-      mainTitle: "AML Cloud",
+      mainTitle: "Grass Karma",
     ));
   }
 }
